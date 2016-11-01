@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RPG Generator v2</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body ng-app="rpgGenerator">
+	<h1>RPG GENERATOR</h1>
+	<label></label>
+	<div ng-controller="mainCtrl" id="generator">
+		<div ng-repeat="(key, dataSet) in rpgList">
+	   		<!-- <label class="editing-label">{{key}}</label> -->
+			<div ng-repeat="value in dataSet">
+			<label ng-hide="editing" class="editing-label">{{value}}</label>
+	        <input ng-change="changeInput()" ng-show="editing" ng-blur="editing = false;" class="editing-label" type="text" value="{{value}}" />
+	   		</div>
+	   		<div class="actions">
+			<a href="" ng-click="editing = !editing">Edit</a>
+		</div>
+		</div>
+	</div>
+	<script src="vendor/angular.min.js" type="text/javascript"></script>
+	<script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/helloworld.js" type="text/javascript"></script>
+</body>
+</html>
+<label class="editing-label">{{Object.keys(PCs)[0]}}</label>
+		<div class="actions">
+			<a href="" ng-click="editing = !editing">Edit</a>
+		</div>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="rpgGenerator">
+	<h1>RPG GENERATOR</h1>
+	<div ng-controller="mainCtrl" id="generator">
+		<tr ng-repeat="(key, value) in data">
+		    <td>{{key}}<input type="text" ng-model="data[key]"></td>
+		</tr>
+	</div>
+
+	<script src="vendor/angular.min.js" type="text/javascript"></script>
+	<script src="scripts/app.js" type="text/javascript"></script>
+	<script src="scripts/helloworld.js" type="text/javascript"></script>
+</body>
+</html>
