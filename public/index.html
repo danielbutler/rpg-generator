@@ -4,13 +4,15 @@
 	<title>In This RPG...</title>
 	<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 	<link rel="stylesheet" href="/styles/main.css" type="text/css">
+	<script src="vendor/angular.js"></script>
 </head>
-<body ng-app"rpgGenerator" ng-controller="mainCtrl">
-	<h1>In this RPG...</h1>
-	<div class=rpglist>
-		{{}}
+<body ng-app="myApp">
+	<div ng-controller="GreetingController">
+		<h1>In this RPG...</h1>
+		<div class=rpglist>
+			{{greeting}}
+		</div>
 	</div>
-
-<script src="./vendor/angular.js"></script>
+<script src="scripts/app.js"></script>
 </body>
 </html>
