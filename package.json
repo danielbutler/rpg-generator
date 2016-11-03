@@ -1,0 +1,19 @@
+{
+  "name": "myprojectv3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbutler/rpg-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielbutler/rpg-generator/issues"
+  },
+  "homepage": "https://github.com/danielbutler/rpg-generator#readme"
+}

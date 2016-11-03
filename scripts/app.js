@@ -1,19 +1,21 @@
+'use strict';
+
 angular.module("rpgGenerator", [])
-.controller('mainCtrl', function($scope, dataService) {
-	$scope.helloWorld = function() {
-		console.log("Hello there! This is the helloWorld controller function, in the mainCtrl!");
-	};
-	$scope.changeInput = function() {
-		console.log("changeInput working!");
-	};
-	dataService.getRpgList(function(response) {
-		console.log(response.data);
-		$scope.rpgList = response.data;
-	});
-})
+.controller('mainCtrl', function($scope, $http) {
+  dataService.getRPGList(function(response) {
+    console.log(response.data);
+    $scope.todos = response.data;
+  });
+});
+
 .service('dataService', function($http) {
-	this.getRpgList = function(callback) {
-		$http.get('mock/data.json')
-		.then(callback)
-	}
+  this.helloConsole = function() {
+    console.log('This is the helloConsole service!');
+  };
+
+  this.getRPGList = function(callback) {
+    $http.get('./mock/data.json')
+    .then(function (response) {
+        $scope.myWelcome = response.data;
+    });
 });
