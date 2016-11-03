@@ -1,5 +1,5 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('rpgGenerator',[]);
 
-myApp.controller('GreetingController', ['$scope', function GreetingController($scope) {
+myApp.controller('mainCTRL', ['$scope', function mainCTRL($scope) {
   $scope.greeting = 'Hola!';
 }]);
