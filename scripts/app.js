@@ -1,13 +1,7 @@
 'use strict';
 
 var pcMessage = [
-  "The PCs are ",
-  " ",
-  " ",
-  " who, with ",
-  ", fight ",
-  " for ",
-  " "
+  "The PCs are "," "," "," who, with ",", fight "," for "," "
 ];
 
 function MessageCreator (data) {
@@ -19,6 +13,7 @@ function MessageCreator (data) {
   for (var i = 0; i < pcMessage.length; i ++) {
     message += pcMessage[i]+data[pcKeys[i]];
   }
+  message += ".";
   return message;
 };
 
