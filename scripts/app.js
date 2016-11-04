@@ -4,6 +4,17 @@ var pcMessage = [
   "The PCs are "," "," "," who, with ",", fight "," for "," "
 ];
 
+function getRandomInt(max) {
+  return Math.floor((Math.random() * max));
+};
+
+function qCheck (foo) {
+  var lastChar = foo.substr(foo.length - 1);
+  if (lastChar === "?") {
+    return true;
+  }
+};
+
 function MessageCreator (data) {
   var pcKeys = [];
   var message = "";
@@ -11,9 +22,13 @@ function MessageCreator (data) {
     pcKeys.push(key);
   }
   for (var i = 0; i < pcMessage.length; i ++) {
-    message += pcMessage[i]+data[pcKeys[i]];
+    var y = data[pcKeys[i]].length;
+    var z = getRandomInt(y);
+    message += pcMessage[i]+data[pcKeys[i]][z];;
   }
-  message += ".";
+  if(!qCheck(message)) {
+    message += ".";
+  };
   return message;
 };
 
@@ -22,17 +37,13 @@ angular.module('rpgGenerator',[])
   $scope.greeting = 'Hola!';
 
   data.getInfo(function(response) {
-    // console.log(response.data);
     $scope.PcInfoRaw = response.data;
     $scope.PcInfo = MessageCreator($scope.PcInfoRaw);
-    // $scope.PcMessage = {{PcInfo.pcsAreAdjective[0]}}
-    // $scope.PcMessage += {{PcInfo.pcsAre}}
-    // $scope.PcMessage += $scope.PcMessage += $scope.PcMessage += $scope.PcMessage += $scope.PcMessage += {{PcInfo.pcsLocation}}
-    // $scope.PcMessage += $scope.PcMessage += $scope.PcMessage += $scope.PcMessage += {{PcInfo.pcsWhoWith}}
-    // $scope.PcMessage += $scope.PcMessage += $scope.PcMessage += {{PcInfo.pcsFight}}
-    // $scope.PcMessage += $scope.PcMessage += {{PcInfo.pcsFor}}
-    // $scope.PcMessage += {{PcInfo.pcsWhy}}
   });
+
+  $scope.numberGenerator = function(){
+    console.log(getRandomInt(0, 7));
+  };
 
 }])
 
@@ -42,10 +53,3 @@ angular.module('rpgGenerator',[])
     .then(callback)
   };
 });
-
-// .factory('getTodos', ['$http', function($http) {
-//   return function(callback) {
-//     $http.get('/mock/todos.json')
-//     .then(callback);
-//   };
-// }]);

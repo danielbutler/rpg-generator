@@ -1,23 +1,82 @@
 {
-  "pcsAreAdjective": [
-    "misunderstood"
-  ],
-  "pcsAre": [
-    "perfect silver spheres"
-  ],
-  "pcsLocation": [
-    "travelling faster than light"
-  ],
-  "pcsWhoWith": [
-    "high-pitched voices"
-  ],
-  "pcsFight": [
-    "people who are just plain mean"
-  ],
-  "pcsFor": [
-    "pieces of eight"
-  ],
-  "pcsWhy": [
-    "when the world needs them most"
-  ]
+	"pcsAreAdjective": [
+		"misunderstood",
+		"mechanical",
+		"grim and gritty",
+		"enchanted",
+		"surly",
+		"profaned",
+		"tubular",
+		"monstrous"
+	],
+	"pcsAre": [
+		"perfect silver spheres",
+		"robots",
+		"astronauts",
+		"carpenters",
+		"centurions",
+		"republicans",
+		"salesmen",
+		"board game enthusiasts",
+		"cars",
+		"elephants"
+	],
+	"pcsLocation": [
+		"travelling faster than light",
+		"in Dr. Frankenstein's laboratory",
+		"in a beseiged castle",
+		"trapped in a walk-in freezer",
+		"backpacking in Europe",
+		"inside the dark heart of man",
+		"in a closed down Wal-Mart",
+		"around the back of the parking lot"
+	],
+	"pcsWhoWith": [
+		"high-pitched voices",
+		"throwing stars",
+		"their winning smiles",
+		"swords",
+		"an embarassing lack of self-awareness",
+		"water tubes",
+		"coffee cans",
+		"smarts you were just born with",
+		"a bunch of hot air",
+		"transforming cars"
+	],
+	"pcsFight": [
+		"people who are just plain mean",
+		"organized crime",
+		"judicial activism",
+		"barbarian invaders",
+		"USAma Bin Laden",
+		"a twitter egg",
+		"existential dread given form",
+		"plain old orcs",
+		"gentrification"
+	],
+	"pcsFor": [
+		"pieces of eight",
+		"a college degree",
+		"an encore",
+		"the One Ring",
+		"career advancement",
+		"hot dates",
+		"whatever they can find",
+		"a toy car",
+		"blessings upon blessings",
+		"aspirin",
+		"a delicious can of corned beef"
+	],
+	"pcsWhy": [
+    "when the world needs them most",
+    "in a time of legends",
+		"because it's the right thing to do",
+		"...but what's that behind them?",
+		"...well, it seemed like a good idea at the time",
+    "because why not",
+    "around about midnight",
+    "for the good of the land",
+    "all because mom said so",
+    "because if they didn't who would?"
+	]
 }
