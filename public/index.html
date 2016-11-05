@@ -15,9 +15,8 @@
 			<p><button ng-click="editing = true; fillOutForm()" ng-hide="editing">Make Your Own</button></p>
 		</div>
 		<div ng-show="editing">
-			<label>foo</label>
-			<input value='bar'></input>
-			<button ng-click="editing = false; submit = true; getPcInfo()">Submit</button>
+			{{PcInput}
+			<button ng-click="editing = false; submit = true;">Submit</button>
 	</div>
 <script src="scripts/app.js"></script>
 </body>

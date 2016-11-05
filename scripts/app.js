@@ -15,16 +15,24 @@ function qCheck (foo) {
   }
 };
 
-function MessageCreator (data) {
+function MessageCreator (data, form) {
   var pcKeys = [];
   var message = "";
+  if(form === undefined) {
+    form = false;
+  }
+  console.log(form);
   for (var key in data) {
     pcKeys.push(key);
   }
   for (var i = 0; i < pcMessage.length; i ++) {
     var y = data[pcKeys[i]].length;
     var z = getRandomInt(y);
-    message += pcMessage[i]+data[pcKeys[i]][z];;
+    if(form) {
+      message += "<label>" + pcMessage[i] + "</label><input value='" + data[pcKeys[i]][z] + "'></input>";
+    } else {
+      message += pcMessage[i]+data[pcKeys[i]][z];
+    }
   }
   if(!qCheck(message)) {
     message += ".";
@@ -45,12 +53,14 @@ angular.module('rpgGenerator',[])
     console.log(getRandomInt(0, 7));
   };
 
-  $scope.fillOutForm = function() {
-    console.log('what up g');
+  $scope.getPcInfo = function() {
+    var form = false;
+    $scope.PcInfo = MessageCreator($scope.PcInfoRaw, form);
   };
 
-  $scope.getPcInfo = function() {
-    $scope.PcInfo = MessageCreator($scope.PcInfoRaw);
+  $scope.fillOutForm = function() {
+    var form = true;
+    $scope.PcInput = MessageCreator($scope.PcInfoRaw, form);
   };
 
 }])
@@ -60,4 +70,5 @@ angular.module('rpgGenerator',[])
     $http.get('mock/data.json')
     .then(callback)
   };
+
 });
