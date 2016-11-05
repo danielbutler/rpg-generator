@@ -41,8 +41,16 @@ angular.module('rpgGenerator',[])
     $scope.PcInfo = MessageCreator($scope.PcInfoRaw);
   });
 
-  $scope.numberGenerator = function(){
+  $scope.numberGenerator = function() {
     console.log(getRandomInt(0, 7));
+  };
+
+  $scope.fillOutForm = function() {
+    console.log('what up g');
+  };
+
+  $scope.getPcInfo = function() {
+    $scope.PcInfo = MessageCreator($scope.PcInfoRaw);
   };
 
 }])

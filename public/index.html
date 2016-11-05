@@ -11,7 +11,13 @@
 		<h1 ng-click="numberGenerator()">In this RPG...</h1>
 		<div class=rpglist>
 			{{PcInfo}}
+			<p><button ng-click="submit = true; getPcInfo()">Another Idea?</button></p>
+			<p><button ng-click="editing = true; fillOutForm()" ng-hide="editing">Make Your Own</button></p>
 		</div>
+		<div ng-show="editing">
+			<label>foo</label>
+			<input value='bar'></input>
+			<button ng-click="editing = false; submit = true; getPcInfo()">Submit</button>
 	</div>
 <script src="scripts/app.js"></script>
 </body>
