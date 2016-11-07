@@ -18,10 +18,12 @@ function qCheck (foo) {
 function MessageCreator (data, form) {
   var pcKeys = [];
   var message = "";
+  var newObject = [];
+  // form is used to determine if MessageCreator is building the input form
+  // or just the general RPG Message
   if(form === undefined) {
     form = false;
   }
-  console.log(form);
   for (var key in data) {
     pcKeys.push(key);
   }
@@ -29,7 +31,8 @@ function MessageCreator (data, form) {
     var y = data[pcKeys[i]].length;
     var z = getRandomInt(y);
     if(form) {
-      message += "<label>" + pcMessage[i] + "</label><input value='" + data[pcKeys[i]][z] + "'></input>";
+      // message += "<label>" + pcMessage[i] + "</label><input value='" + data[pcKeys[i]][z] + "'></input>";
+      newObject.push(data[pcKeys[i]][z]);
     } else {
       message += pcMessage[i]+data[pcKeys[i]][z];
     }
@@ -37,7 +40,11 @@ function MessageCreator (data, form) {
   if(!qCheck(message)) {
     message += ".";
   };
-  return message;
+  if(form) {
+    return newObject;
+  } else {
+    return message;
+  }
 };
 
 angular.module('rpgGenerator',[])
@@ -61,6 +68,7 @@ angular.module('rpgGenerator',[])
   $scope.fillOutForm = function() {
     var form = true;
     $scope.PcInput = MessageCreator($scope.PcInfoRaw, form);
+    console.log($scope.PcInput);
   };
 
 }])
