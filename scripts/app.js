@@ -6,14 +6,14 @@ var pcMessage = [
 
 function getRandomInt(max) {
   return Math.floor((Math.random() * max));
-};
+}
 
 function qCheck (foo) {
   var lastChar = foo.substr(foo.length - 1);
   if (lastChar === "?") {
     return true;
   }
-};
+}
 
 function MessageCreator (data, form) {
   var pcKeys = [];
@@ -28,24 +28,25 @@ function MessageCreator (data, form) {
     pcKeys.push(key);
   }
   for (var i = 0; i < pcMessage.length; i ++) {
-    var y = data[pcKeys[i]].length;
+    var y = data[pcKeys[i]].items.length;
     var z = getRandomInt(y);
     if(form) {
-      // message += "<label>" + pcMessage[i] + "</label><input value='" + data[pcKeys[i]][z] + "'></input>";
-      newObject.push(data[pcKeys[i]][z]);
+      var currentName =  data[pcKeys[i]].name;
+      var currentItems = data[pcKeys[i]].items[z];
+      newObject.push({name: currentName, items: currentItems})
     } else {
-      message += pcMessage[i]+data[pcKeys[i]][z];
+      message += pcMessage[i]+data[pcKeys[i]].items[z];
     }
   }
   if(!qCheck(message)) {
     message += ".";
-  };
+  }
   if(form) {
     return newObject;
   } else {
     return message;
   }
-};
+}
 
 angular.module('rpgGenerator',[])
 .controller('mainCTRL', ['$scope', 'data', function mainCTRL($scope, data) {
@@ -68,7 +69,15 @@ angular.module('rpgGenerator',[])
   $scope.fillOutForm = function() {
     var form = true;
     $scope.PcInput = MessageCreator($scope.PcInfoRaw, form);
-    console.log($scope.PcInput);
+    debugger;
+  };
+
+  $scope.save = function() {
+    /*$http.post('path/to/server/file/to/save/json', $scope.languages).then(function(data) {
+      $scope.msg = 'Data saved';
+    });*/
+    $scope.msg = 'Data sent: '+ JSON.stringify($scope.languages);
+    console.log($scope.msg);
   };
 
 }])
@@ -76,7 +85,12 @@ angular.module('rpgGenerator',[])
 .service('data', function($http) {
   this.getInfo = function(callback) {
     $http.get('mock/data.json')
-    .then(callback)
+    .then(callback);
+  };
+
+  this.putInfo = function(callback) {
+    $http.put('mock/data.json')
+    .then(callback);
   };
 
 });

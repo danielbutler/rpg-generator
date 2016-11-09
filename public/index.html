@@ -15,14 +15,19 @@
 			<p><button ng-click="editing = true; fillOutForm()" ng-hide="editing">Make Your Own</button></p>
 		</div>
 		<div id="submitForm" ng-show="editing">
-			<label>How Are They?</label><input value='{{PcInput[0]}}'></input>
+			<div ng-repeat="(key, value) in PcInput">
+				<label>{{value.name}}</label><input value='{{value.items}}'></input>
+			</div>
+			<!-- <label>How Are They?</label><input value='{{PcInput[0]}}'></input>
 			<label>Who Are They?</label><input value='{{PcInput[1]}}'></input>
 			<label>Where are They?</label><input value='{{PcInput[2]}}'></input>
 			<label>What are they fighting with?</label><input value='{{PcInput[3]}}'></input>
 			<label>What are they fighting?</label><input value='{{PcInput[4]}}'></input>
 			<label>What are they fighting for?</label><input value='{{PcInput[5]}}'></input>
-			<label>Why are they fighting?</label><input value='{{PcInput[6]}}'></input>
+			<label>Why are they fighting?</label><input value='{{PcInput[6]}}'></input> -->
 			<button ng-click="editing = false; submit = true;">Submit</button>
+		</div>
+
 	</div>
 <script src="scripts/app.js"></script>
 </body>
