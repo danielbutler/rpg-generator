@@ -69,7 +69,6 @@ angular.module('rpgGenerator',[])
   $scope.fillOutForm = function() {
     var form = true;
     $scope.PcInput = MessageCreator($scope.PcInfoRaw, form);
-    debugger;
   };
 
   $scope.save = function() {
