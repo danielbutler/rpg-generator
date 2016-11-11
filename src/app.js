@@ -6,6 +6,7 @@ var router = require('./api');
 var app = express();
 
 require('./database');
+require('./seed');
 
 app.use('/', express.static('public'));
 app.use('/scripts', express.static('scripts'));

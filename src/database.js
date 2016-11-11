@@ -2,7 +2,7 @@
 
 var mongoose =require('mongoose');
 
-mongoose.connect('mongodb://localhost/rpg-pcs', function() {
+mongoose.connect('mongodb://localhost/rpg-pcs', function(err) {
   if(err) {
     console.log('Failed connecting to Mongodb!');
   } else {

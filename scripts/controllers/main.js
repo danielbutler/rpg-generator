@@ -25,7 +25,7 @@ angular.module('rpgGenerator')
 
     var saveFile = [];
     angular.forEach(data, function(value, key) {
-      if(data[key].edited === true && value.items != null && value.items != "") {
+      if(data[key].edited === true && value.items !== null && value.items !== "") {
         console.log(data[key].edited);
         this.push({"key": key, "value": value.items});
       }
@@ -33,4 +33,4 @@ angular.module('rpgGenerator')
     console.log(saveFile);
     };
 
-}])
+}]);
