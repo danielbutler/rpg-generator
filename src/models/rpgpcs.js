@@ -3,8 +3,10 @@
 var mongoose = require('mongoose');
 
 var rpgpcsSchema = new mongoose.Schema({
-	name: String,
-	completed: Boolean
+	identity: {
+		name: String,
+		items: []
+	}
 });
 
 var model = mongoose.model('Rpgpcs', rpgpcsSchema);
