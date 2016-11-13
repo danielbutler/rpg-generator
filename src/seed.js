@@ -100,16 +100,13 @@ var rpgpcs = {
 };
 
 Object.keys(rpgpcs).forEach(function(rpgpc, index) {
-	// console.log("rpgpcs: "+ rpgpcs);
-	// console.log("rpgpc: "+ rpgpc);
 	var Rname = rpgpcs[rpgpc].name;
 	var Ritems = rpgpcs[rpgpc].items;
-	// console.log(Rname);
-	Rpgpcs.find({ 'identity': rpgpc }, function(err, rpgpcs) {
+	// Rpgpcs.find({ 'identity': rpgpc }, function(err, rpgpcs) {
+	Rpgpcs.find({ 'name': Rname }, function(err, rpgpcs) {
 	  	if (!err && !rpgpcs.length) {
-	      // console.log("inside " + Rname);
-				// console.log("inside " + Ritems);
-	      Rpgpcs.create({ 'identity': rpgpc, 'children': {'name': Rname, 'items': Ritems} });
+	      // Rpgpcs.create({ 'identity': rpgpc, 'children': {'name': Rname, 'items': Ritems} });
+	      Rpgpcs.create({'name': Rname, 'items': Ritems});
 	  	} else {
 	      console.log("error: " + err);
 	    }

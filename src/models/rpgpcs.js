@@ -11,7 +11,12 @@ var rpgpcsSchema = new mongoose.Schema({
 	children: [itemSchema]
 });
 
+var newRpgpcsSchema = new mongoose.Schema({
+	name: String,
+	items: []
+})
 
-var model = mongoose.model('Rpgpcs', rpgpcsSchema);
+// var model = mongoose.model('Rpgpcs', rpgpcsSchema);
+var model = mongoose.model('Rpgpcs', newRpgpcsSchema);
 
 module.exports = model;
