@@ -6,11 +6,14 @@ h1 {
   font-size: 50px;
   color: #BA6222;
 }
+.submit-form {
+}
 label {
   text-align: right;
   clear: both;
   float:left;
   margin-top: 10px;
+  width: 200px;
   /*margin-right:15px;*/
 }
 input {
@@ -18,4 +21,7 @@ input {
   height: 20px;
   width: 150px;
   float: left;
+}
+button {
+  float:none;
 }

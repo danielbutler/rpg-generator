@@ -16,7 +16,6 @@ function qCheck (foo) {
 }
 
 function MessageCreator (data, form) {
-  var pcKeys = [];
   var message = "";
   var newObject = [];
   // form is used to determine if MessageCreator is building the input form
@@ -24,18 +23,16 @@ function MessageCreator (data, form) {
   if(form === undefined) {
     form = false;
   }
-  for (var key in data) {
-    pcKeys.push(key);
-  }
   for (var i = 0; i < pcMessage.length; i ++) {
-    var y = data[pcKeys[i]].items.length;
+    var rpgData = data['rpg'][i];
+    var y = rpgData.items.length;
     var z = getRandomInt(y);
     if(form) {
-      var currentName =  data[pcKeys[i]].name;
-      var currentItems = data[pcKeys[i]].items[z];
-      newObject.push({name: currentName, items: currentItems})
+      var currentName = rpgData.name;
+      var currentItems = rpgData.items[z];
+      newObject.push({name: currentName, items: currentItems});
     } else {
-      message += pcMessage[i]+data[pcKeys[i]].items[z];
+      message += pcMessage[i]+rpgData.items[z];
     }
   }
   if(!qCheck(message)) {

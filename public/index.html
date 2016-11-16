@@ -15,12 +15,11 @@
 		</div>
 		<div id="submitForm" ng-show="editing" ng-class="{
 	  }">
-			<div ng-repeat="(key, value) in PcInput" ng-init="PcInput[key].edited = false">
-				<label>{{value.name}}</label><input ng-model='value.items' ng-change="PcInput[key].edited = true" value='{{value.items}}'></input>
+			<div ng-repeat="(key, value) in PcInput" ng-init="PcInput[key].edited = false" class="submit-form">
+				<label>{{value.name}}</label><input ng-model='value.items' ng-change="PcInput[key].edited = true" value='{{value.items}}' ng-click="value.items = null; myStyle={color:'black'}" ng-style="myStyle"></input>
 			</div>
 			<button ng-click="editing = false; save(PcInput)">Submit</button>
 		</div>
-
 	</div>
 <script src="vendor/angular.js" type="text/javascript"></script>
 <script src="scripts/app.js"></script>

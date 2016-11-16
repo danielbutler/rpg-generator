@@ -6,6 +6,7 @@ angular.module('rpgGenerator')
   data.getInfo(function(response) {
     $scope.PcInfoRaw = response.data;
     $scope.PcInfo = MessageCreator($scope.PcInfoRaw);
+    // $scope.PcInfo = MessageCreator(response.data);
   });
 
   $scope.getPcInfo = function() {
@@ -18,19 +19,19 @@ angular.module('rpgGenerator')
     $scope.PcInput = MessageCreator($scope.PcInfoRaw, form);
   };
 
-  $scope.save = function(data) {
-    /*$http.post('path/to/server/file/to/save/json', $scope.languages).then(function(data) {
-      $scope.msg = 'Data saved';
-    });*/
-
+  $scope.save = function(rpgSaves) {
+    var rpgCheck = ($scope.PcInfoRaw);
     var saveFile = [];
-    angular.forEach(data, function(value, key) {
-      if(data[key].edited === true && value.items !== null && value.items !== "") {
-        console.log(data[key].edited);
-        this.push({"key": key, "value": value.items});
+    angular.forEach(rpgSaves, function(value, key) {
+      if(rpgSaves[key].edited === true && value.items !== null && value.items !== "") {
+        var rpg_id = rpgCheck.rpg[key]._id;
+        this.push({"_id": rpg_id, "name": value.name, "value": value.items});
       }
     }, saveFile);
-    console.log(saveFile);
+    data.saveRpg(saveFile);
+    // .finally();
+      // $scope.resetTodoState()
     };
+    // debugger;
 
 }]);

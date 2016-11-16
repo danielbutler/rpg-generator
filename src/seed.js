@@ -1,10 +1,10 @@
 'use strict';
 
-var Rpgpcs = require('./models/rpgpcs');
+var Rpg = require('./models/rpg');
 
-var rpgpcs = {
+var rpg = {
 	"pcsAreAdjective": {
-		"name": "How Are They?",
+		"name": "How Are They",
 		"items": [
 		"misunderstood",
 		"mechanical",
@@ -16,7 +16,7 @@ var rpgpcs = {
 		"monstrous"
 	]},
 	"pcsAre": {
-		"name": "Who Are They?",
+		"name": "Who Are They",
 		"items": [
 		"perfect silver spheres",
 		"robots",
@@ -30,7 +30,7 @@ var rpgpcs = {
 		"elephants"
 	]},
 	"pcsLocation": {
-		"name": "Where are They?",
+		"name": "Where are They",
 		"items": [
 		"travelling faster than light",
 		"in Dr. Frankenstein's laboratory",
@@ -42,7 +42,7 @@ var rpgpcs = {
 		"around the back of the parking lot"
 	]},
 	"pcsWhoWith": {
-		"name": "What are they fighting with?",
+		"name": "What are they fighting with",
 		"items": [
 		"high-pitched voices",
 		"throwing stars",
@@ -56,7 +56,7 @@ var rpgpcs = {
 		"transforming cars"
 	]},
 	"pcsFight": {
-		"name": "What are they fighting?",
+		"name": "What are they fighting",
 		"items": [
 		"people who are just plain mean",
 		"organized crime",
@@ -69,7 +69,7 @@ var rpgpcs = {
 		"gentrification"
 	]},
 	"pcsFor": {
-		"name": "What are they fighting for?",
+		"name": "What are they fighting for",
 		"items": [
 		"pieces of eight",
 		"a college degree",
@@ -84,7 +84,7 @@ var rpgpcs = {
 		"a delicious can of corned beef"
 	]},
 	"pcsWhy": {
-		"name": "Why are they fighting?",
+		"name": "Why are they fighting",
 		"items": [
     "when the world needs them most",
     "in a time of legends",
@@ -99,16 +99,14 @@ var rpgpcs = {
 	]}
 };
 
-Object.keys(rpgpcs).forEach(function(rpgpc, index) {
-	var Rname = rpgpcs[rpgpc].name;
-	var Ritems = rpgpcs[rpgpc].items;
-	// Rpgpcs.find({ 'identity': rpgpc }, function(err, rpgpcs) {
-	Rpgpcs.find({ 'name': Rname }, function(err, rpgpcs) {
-	  	if (!err && !rpgpcs.length) {
-	      // Rpgpcs.create({ 'identity': rpgpc, 'children': {'name': Rname, 'items': Ritems} });
-	      Rpgpcs.create({'name': Rname, 'items': Ritems});
-	  	} else {
-	      console.log("error: " + err);
-	    }
-	  });
+Object.keys(rpg).forEach(function(rpg_item, index) {
+	var Rname = rpg[rpg_item].name;
+	var Ritems = rpg[rpg_item].items;
+	Rpg.find({ 'name': Rname }, function(err, rpg) {
+		if (!err && !rpg.length) {
+			Rpg.create({'name': Rname, 'items': Ritems});
+		} else {
+			return err;
+		}
+	});
 });
