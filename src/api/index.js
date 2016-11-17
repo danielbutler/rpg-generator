@@ -14,20 +14,9 @@ router.get('/rpg', function(req, res) {
   });
 });
 
-// router.post('/rpgpcs', function(req, res) {
-//   var rpgpc = req.body;
-//   Rpgpcs.create(rpgpc, function(err, todo) {
-//     if(err) {
-//       return res.status(500).json({err: err.message});
-//     }
-//     res.json({'rpgpc': rpgpc, messsage: 'RPGPC entry added'});
-//   });
-// });
-
 router.put('/rpg/:id', function(req, res) {
   var id = req.params.id;
   var rpg_item = req.body;
-  console.log(rpg_item.items);
   if(rpg_item && rpg_item._id !== id) {
     return res.status(500).json({err: "Ids don't match: " + id});
   }
