@@ -1,14 +1,13 @@
-<div class="list">
+<div id="the_stuff">
   <div id="rpglist">
-    {{PcInfo}}
+    <div id="pc-info">{{PcInfo}}</div>
     <p><button ng-click="getPcInfo()">Another Idea?</button></p>
     <p><button ng-click="editing = true; fillOutForm()" ng-hide="editing">Make Your Own</button></p>
   </div>
-  <div id="submitForm" ng-show="editing" ng-class="{
-  }">
+  <div id="submitForm" ng-show="editing">
     <div ng-repeat="(key, value) in PcInput" ng-init="PcInput[key].edited = false" class="submit-form">
-      <label>{{value.name}}</label><input ng-model='value.items' ng-change="PcInput[key].edited = true" value='{{value.items}}' ng-click="value.items = null; myStyle={color:'black'}" ng-style="myStyle"></input>
+      <label class="inputs">{{value.name}}?</label><input class="inputs" ng-model='value.items' ng-change="PcInput[key].edited = true" value='{{value.items}}' ng-click="value.items = null; myStyle={color:'black'}" ng-style="myStyle"></input>
     </div>
-    <button ng-click="editing = false; save(PcInput)">Submit</button>
+    <button id="submit-button" ng-click="editing = false; save(PcInput)">Submit</button>
   </div>
 </div>

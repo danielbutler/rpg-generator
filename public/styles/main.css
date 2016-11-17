@@ -1,27 +1,112 @@
 body {
-  background-color: #EFDD6F;
+  background-color: #e1ad4d;
 }
 h1 {
   font-family: 'Bungee', cursive;
   font-size: 50px;
-  color: #BA6222;
+  color: #a56321;
+  text-shadow: -2px 2px 3px black,
+  -3px 3px 3px brown,
+  -2px 2px 3px #cb3434;
 }
-.submit-form {
+#main {
+  position: absolute;
 }
-label {
+.list {
+  position: relative;
+}
+#rpglist {
+  font-size: 180%;
+  font-family: 'Coming Soon', cursive;
+}
+  #rpglist button {
+    font-family: 'Nunito', sans-serif;
+  }
+
+.inputs {
+  position: relative;
+  font-size: 110%;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  float:left;
+}
+#pc-info {
+  background-color: #edcd92;
+  box-shadow: 0px 10px 10px 2px #edcd92,
+  0px 10px 10px 2px #e1ad4d,
+  0px -10px 10px 2px #edcd92,
+  0px -10px 10px 2px #e1ad4d;
+}
+#submitForm label {
   text-align: right;
   clear: both;
-  float:left;
-  margin-top: 10px;
-  width: 200px;
-  /*margin-right:15px;*/
+  width: 220px;
+  margin-top: 5px;
 }
-input {
+
+#submitForm input {
   color: #a3a3a3;
-  height: 20px;
-  width: 150px;
-  float: left;
+  height: 22px;
+  width: 300px;\
 }
+#submit-form {
+  position: relative;
+}
+
 button {
-  float:none;
+  background: #b8a214;
+  border-radius: 8px;
+  width: 9em;
+  height: 2em;
+  font-family: 'Nunito', sans-serif;
+  font-size: 75%;
+}
+
+#submit-button {
+  font-size: 100%;
+  background: #BA6222;
+  width: 12em;
+  height: 4em;
+ }
+
+ /* Media Queries -------------------- */
+
+@media (max-width: 1024px) {
+}
+@media (max-width: 640px) {
+  #rpglist {
+    font-size: 1.5rem;
+  }
+  #submitForm {
+    background-color: #e1ad4d;
+    position: absolute;
+    top: 0px;
+    min-height: 90%
+  }
+}
+
+@media (max-width: 422px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  #submitForm label, #submitForm input {
+    width: 100%;
+    margin: 5px, 0, 5px, 0;
+    text-align: center;
+  }
+  #submitForm input {
+    width: 90%;
+    margin-left: 4%;
+    margin-bottom: .75rem;
+  }
+}
+@media (max-width: 360px) {
+  #pc-info {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 340px) {
+  h1 {
+    font-size: 1.75rem;
+  }
 }
