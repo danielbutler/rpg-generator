@@ -6,7 +6,6 @@ angular.module('rpgGenerator')
   data.getInfo(function(response) {
     $scope.PcInfoRaw = response.data;
     $scope.PcInfo = MessageCreator($scope.PcInfoRaw);
-    // $scope.PcInfo = MessageCreator(response.data);
   });
 
   $scope.getPcInfo = function() {
@@ -29,9 +28,8 @@ angular.module('rpgGenerator')
       }
     }, saveFile);
     data.saveRpg(saveFile);
-    // .finally();
-      // $scope.resetTodoState()
-    };
-    // debugger;
-
+    data.getInfo(function(response) {
+      $scope.PcInfoRaw = response.data;
+    });
+  };
 }]);

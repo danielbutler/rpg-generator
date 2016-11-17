@@ -6,24 +6,14 @@
 	<link rel="stylesheet" href="/styles/main.css" type="text/css">
 </head>
 <body ng-app="rpgGenerator">
-	<div ng-controller="mainCTRL">
-		<h1 ng-click="numberGenerator()">In this RPG...</h1>
-		<div id="rpglist">
-			{{PcInfo}}
-			<p><button ng-click="getPcInfo()">Another Idea?</button></p>
-			<p><button ng-click="editing = true; fillOutForm()" ng-hide="editing">Make Your Own</button></p>
-		</div>
-		<div id="submitForm" ng-show="editing" ng-class="{
-	  }">
-			<div ng-repeat="(key, value) in PcInput" ng-init="PcInput[key].edited = false" class="submit-form">
-				<label>{{value.name}}</label><input ng-model='value.items' ng-change="PcInput[key].edited = true" value='{{value.items}}' ng-click="value.items = null; myStyle={color:'black'}" ng-style="myStyle"></input>
-			</div>
-			<button ng-click="editing = false; save(PcInput)">Submit</button>
-		</div>
+	<div>
+		<h1>In this RPG...</h1>
+		<rpg></rpg>
 	</div>
 <script src="vendor/angular.js" type="text/javascript"></script>
-<script src="scripts/app.js"></script>
+<script src="scripts/app.js" type="text/javascript"></script>
 <script src="scripts/controllers/main.js" type="text/javascript"></script>
 <script src="scripts/services/data.js" type="text/javascript"></script>
+<script src="scripts/directives/rpg.js" type="text/javascript"></script>
 </body>
 </html>
