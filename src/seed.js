@@ -62,7 +62,6 @@ var rpg = {
 		"organized crime",
 		"judicial activism",
 		"barbarian invaders",
-		"Osama Bin Laden",
 		"a twitter egg",
 		"existential dread given form",
 		"plain old orcs",
