@@ -32,12 +32,4 @@ router.put('/rpg/:id', function(req, res) {
 
 });
 
-  // Rpgpcs.findByIdAndUpdate(id, rpgpc, {new: true}, function(err, rpgpc) {
-  //   if(err) {
-  //     return res.status(500).json({err: err.message});
-  //   }
-  //   res.json({'rpgpc': rpgpc, messsage: 'RPGPC entry added'});
-  // });
-// });
-
 module.exports = router;
