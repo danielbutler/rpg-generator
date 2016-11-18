@@ -11,7 +11,7 @@ or the most insane.
 1. npm start
 
 You're ready to go!
-Just checkout [http://localhost:3000]!
+Just checkout [http://localhost:3000](http://localhost:3000)!
 
 Click Another Idea to generate a new RPG campaign idea!
 Click Make Your Own to open up a form so you can submit your own terrible ideas.  You don't even have to fill them all out!
@@ -20,4 +20,4 @@ Click Make Your Own to open up a form so you can submit your own terrible ideas.
 The main App itself resides in `/scripts/app.js`
 
 ## Tests
-You can check the current database at [http://localhost:3000/api/rpg]
+You can check the current database at [http://localhost:3000/api/rpg](http://localhost:3000/api/rpg)
