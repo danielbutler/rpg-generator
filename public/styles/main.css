@@ -62,16 +62,15 @@ button {
   font-size: 100%;
   background: #BA6222;
   width: 12em;
-  height: 4em;
+  height: 2em;
  }
 
  /* Media Queries -------------------- */
 
 @media (max-width: 1024px) {
-  body{background-color: blue;}
+
 }
 @media (max-width: 640px) {
-  body{background-color: green;}
   #rpglist {
     font-size: 1.5rem;
   }
@@ -85,8 +84,7 @@ button {
   }
 }
 
-@media (max-width: 422px) {
-  body{background-color: yellow;}
+@media (max-width: 560px) {
   h1 {
     font-size: 2.5rem;
   }
@@ -102,13 +100,11 @@ button {
   }
 }
 @media (max-width: 360px) {
-  body{background-color: orange;}
   #pc-info {
     font-size: 1rem;
   }
 }
 @media (max-width: 340px) {
-  body{background-color: red;}
   h1 {
     font-size: 1.75rem;
   }
